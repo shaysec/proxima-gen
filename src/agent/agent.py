@@ -8,8 +8,8 @@ from src.tools.tools import agent_tools
 class State(TypedDict):
     messages: Annotated[list, add_messages]
 
-# Initialize LLM (Ensure Ollama is running llama3)
-llm = ChatOllama(model="llama3", temperature=0)
+# --- UPDATED MODEL TO LLAMA 3.1 ---
+llm = ChatOllama(model="llama3.1", temperature=0)
 llm_with_tools = llm.bind_tools(agent_tools)
 
 def chatbot(state: State):
