@@ -1,0 +1,12 @@
+﻿# Python virtual environments
+.venv/
+env/
+__pycache__/
+
+# Database files (Local databases should NEVER be pushed to GitHub)
+data/
+*.sqlite
+*.db
+
+# Environment variables (Secrets)
+.env
