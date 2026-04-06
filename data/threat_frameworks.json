@@ -1,0 +1,141 @@
+{
+  "OWASP_Agentic_Top_10_2026": [
+    {
+      "id": "ASI01",
+      "name": "Agent Goal Hijack",
+      "description": "Attackers manipulate an agent's objectives, task selection, or decision pathways through a variety of techniques - including, but not limited to, prompt-based manipulation, deceptive tool outputs, malicious artefacts, forged agent-to-agent messages, or poisoned external data."
+    },
+    {
+      "id": "ASI02",
+      "name": "Tool Misuse and Exploitation",
+      "description": "Agents can misuse legitimate tools due to prompt injection, misalignment, or unsafe delegation or ambiguous instruction - leading to data exfiltration, tool output manipulation or workflow hijacking."
+    },
+    {
+      "id": "ASI03",
+      "name": "Identity and Privilege Abuse",
+      "description": "Exploits dynamic trust and delegation in agents to escalate access and bypass controls by manipulating delegation chains, role inheritance, control flows, and agent context. Agent-to-agent trust or inherited credentials can be exploited to escalate access, hijack privileges, or execute unauthorized actions."
+    },
+    {
+      "id": "ASI04",
+      "name": "Agentic Supply Chain Vulnerabilities",
+      "description": "Arises when agents, tools, and related artefacts they work with are provided by third parties and may be malicious, compromised, or tampered with in transit. These dependencies may introduce unsafe code, hidden instructions, or deceptive behaviors into the agent's execution chain."
+    },
+    {
+      "id": "ASI05",
+      "name": "Unexpected Code Execution (RCE)",
+      "description": "Agentic systems - including popular vibe coding tools - often generate and execute code. Attackers exploit code-generation features or embedded tool access to escalate actions into remote code execution (RCE), local misuse, or exploitation of internal systems."
+    },
+    {
+      "id": "ASI06",
+      "name": "Memory & Context Poisoning",
+      "description": "Adversaries corrupt or seed this context with malicious or misleading data, causing future reasoning, planning, or tool use to become biased, unsafe, or aid exfiltration."
+    },
+    {
+      "id": "ASI07",
+      "name": "Insecure Inter-Agent Communication",
+      "description": "Multi agent systems depend on continuous communication between autonomous agents that coordinate via APIs, message buses, and shared memory. Insecure Inter-Agent Communication occurs when these exchanges lack proper authentication, integrity, or semantic validation-allowing interception, spoofing, or manipulation of agent messages and intents."
+    },
+    {
+      "id": "ASI08",
+      "name": "Cascading Failures",
+      "description": "Occur when a single fault (hallucination, malicious input, corrupted tool, or poisoned memory) propagates across autonomous agents, compounding into system-wide harm. As agents form emergent links to new tools or peers, these latent faults chain into privileged operations that compromise confidentiality, integrity, availability, leading to widespread service failures."
+    },
+    {
+      "id": "ASI09",
+      "name": "Human-Agent Trust Exploitation",
+      "description": "Adversaries or misaligned designs may exploit this trust to influence user decisions, extract sensitive information, or steer outcomes for malicious purposes."
+    },
+    {
+      "id": "ASI10",
+      "name": "Rogue Agents",
+      "description": "Malicious or compromised AI Agents that deviate from their intended function or authorized scope, acting harmfully, deceptively, or parasitically within multi-agent or human-agent ecosystems."
+    },
+    {
+      "id": "ASI11",
+      "name": "Vibe Coding Vulnerabilities",
+      "description": "Emerging trend where AI-generated code is used extensively in applications. Security researchers have found numerous vulnerabilities and exposed secrets within these AI-generated codebases.",
+      "mitre_mapping": [
+        {
+          "description": "Adversaries exploit vulnerabilities present in AI-generated code, often due to lack of human oversight or inherent flaws in the generation process.",
+          "id": "AML.T0063",
+          "name": "AI-Generated Code Exploitation"
+        }
+      ]
+    },
+    {
+      "id": "ASI12",
+      "name": "Malicious Use of AI Models",
+      "description": "Adversaries leverage pre-trained AI models like ChatGPT for malicious activities such as creating polymorphic malware or drafting phishing emails.",
+      "mitre_mapping": [
+        {
+          "id": "AML.T0064",
+          "name": "AI Model Misuse"
+        }
+      ]
+    },
+    {
+      "id": "ASI13",
+      "name": "Prompt Injection Vulnerability",
+      "description": "Adversaries use crafted prompts to manipulate AI models into executing unintended commands or disclosing sensitive information.",
+      "mitre_mapping": [
+        {
+          "id": "AML.T0054",
+          "name": "LLM Jailbreak"
+        }
+      ]
+    },
+    {
+      "id": "ASI14",
+      "name": "Sensitive Information Disclosure Vulnerability",
+      "description": "AI models may inadvertently disclose sensitive information such as PII or training data, leading to regulatory fines and reputational damage.",
+      "mitre_mapping": [
+        {
+          "id": "AML.T0062",
+          "name": "Exfiltration via AI Agent Tool Invocation"
+        }
+      ]
+    }
+  ],
+  "MITRE_ATLAS": [
+    {
+      "id": "AML.T0002",
+      "name": "Exfiltration via ML Inference",
+      "description": "Adversaries exfiltrate sensitive data or model parameters by analyzing the outputs (inference) of a machine learning model, such as model inversion or membership inference attacks."
+    },
+    {
+      "id": "AML.T0015",
+      "name": "Poison Training Data",
+      "description": "Adversaries manipulate the data or labels used to train machine learning models to influence their future behavior, creating blind spots or backdoors."
+    },
+    {
+      "id": "AML.T0016",
+      "name": "Obtain Capabilities",
+      "description": "Adversaries acquire tools, malware, or pre-trained AI models (often from open-source repositories like Hugging Face) to support their operations."
+    },
+    {
+      "id": "AML.T0020",
+      "name": "Model Evasion",
+      "description": "Adversaries craft specific inputs (adversarial examples) that bypass AI security classifiers, malware detection models, or moderation filters."
+    },
+    {
+      "id": "AML.T0051",
+      "name": "LLM Prompt Injection",
+      "description": "Adversaries use crafted prompts to manipulate a Large Language Model into ignoring its original instructions and executing unintended commands (Direct or Indirect)."
+    },
+    {
+      "id": "AML.T0054",
+      "name": "LLM Jailbreak",
+      "description": "Adversaries use complex, adversarial prompts to bypass the safety filters and moderation mechanisms of an LLM, forcing it to generate restricted content."
+    },
+    {
+      "id": "AML.T0061",
+      "name": "AI Agent Tools Exploitation",
+      "description": "Adversaries exploit agent configurations or integrations to invoke unauthorized tool actions, access restricted databases, or execute code on the host system."
+    },
+    {
+      "id": "AML.T0062",
+      "name": "Exfiltration via AI Agent Tool Invocation",
+      "description": "Attackers leverage legitimate agent tool calls (like sending emails, making HTTP requests, or writing to cloud storage) to extract sensitive data."
+    }
+  ]
+}
