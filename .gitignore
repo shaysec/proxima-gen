@@ -10,3 +10,6 @@ data/
 
 # Environment variables (Secrets)
 .env
+
+# Telegram Session files (Prevents account hijacking)
+*.session
