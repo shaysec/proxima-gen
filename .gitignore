@@ -1,15 +1,27 @@
-﻿# Python virtual environments
+﻿# --- Python & Environment ---
 .venv/
 env/
 __pycache__/
+*.pyc
+.python-version
 
-# Database files (Local databases should NEVER be pushed to GitHub)
-data/
-*.sqlite
-*.db
+# --- Package Management (uv) ---
+# We keep uv.lock and pyproject.toml, but ignore the tool's cache
+.uv/
 
-# Environment variables (Secrets)
+# --- Database & Storage (Local Only) ---
+# We ignore the database files but keep the data folder structure
+data/*.db
+data/*.sqlite
+# Mandatory: Ensure the threat framework is NOT ignored
+!data/threat_frameworks.json
+
+# --- Security & Secrets ---
+# NEVER push these files to GitHub
 .env
-
-# Telegram Session files (Prevents account hijacking)
 *.session
+secrets.json
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
